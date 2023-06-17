@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<%- include ('./partials/cabecalho.ejs'); %>
+   <!-- body -->
+   <body class="main-layout">
+	<!-- header section start -->
+	<div class="container bg-dark">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+            </div>
+            <div class="col-sm-9">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                       <a class="nav-item nav-link" href="../index.ejs">Inicio</a>
+                       <a class="nav-item nav-link" href="../collection.ejs">Coleção</a>
+                       <a class="nav-item nav-link" href="../shoes.ejs">Tenis</a>
+                       <a class="nav-item nav-link" href="../contact.ejs">Contato</a>
+                       <a class="nav-item nav-link last" href="#"><img src="images/search_icon.png"></a>
+                       <a class="nav-item nav-link last" href="../contact.html"><img src="images/shop_icon.png"></a>
+                       <a class="nav-item nav-link last" href="" style="color: white;"><img src="images/person.png" alt="" ></a>
+                    </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+	<!-- new collection section start -->
+  <div class="collection_text">Coleção</div>
+    <div class="layout_padding collection_section">
+		<div class="layout_padding collection_section">
+			<div class="container">
+				<h1 class="new_text"><strong>Nova coleção</strong></h1>
+				<p class="consectetur_text">Apresentamos a nova coleção de tênis! Com designs exclusivos e materiais de alta qualidade, nossos tênis oferecem conforto e estilo. Escolha entre uma variedade de cores e modelos. Experimente!</p>
+				<div class="collection_section_2">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="about-img">
+								
+								<div class="shoes-img"><img src="images/shoes-img1.png"></div>
+								<p class="sport_text">Tenis esportivos</p>
+								<div class="dolar_text">$<strong style="color: #f12a47;">90</strong> 
+									<img src="../images/shopping.png" alt="">
+								</div>
+								<div class="star_icon">
+									<ul>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+									</ul>
+								</div>
+							</div>
+							<button class="seemore_bt">Veja mais</button>
+						</div>
+						<div class="col-md-6">
+							<div class="about-img2">
+								<div class="shoes-img2"><img src="images/shoes-img2.png"></div>
+								<p class="sport_text">Tenis esportivo</p>
+								<div class="dolar_text">$<strong style="color: #f12a47;">90</strong> 		
+								<img src="../images/shopping.png" alt="">
+							</div>
+								<div class="star_icon">
+									<ul>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+										<li><a href="#"><img src="images/star-icon.png"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- new collection section end -->
+	<!-- section footer start -->
+	<%- include ('./partials/rodape.ejs'); %>
+	<!-- section footer end -->
+	<div class="copyright">2019 All Rights Reserved. <a href="https://html.design">Free html  Templates</a></div>
+
+
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+         
+         
+$('#myCarousel').carousel({
+            interval: false
+        });
+
+        //scroll slides on swipe for touch enabled devices
+
+        $("#myCarousel").on("touchstart", function(event){
+
+            var yClick = event.originalEvent.touches[0].pageY;
+            $(this).one("touchmove", function(event){
+
+                var yMove = event.originalEvent.touches[0].pageY;
+                if( Math.floor(yClick - yMove) > 1 ){
+                    $(".carousel").carousel('next');
+                }
+                else if( Math.floor(yClick - yMove) < -1 ){
+                    $(".carousel").carousel('prev');
+                }
+            });
+            $(".carousel").on("touchend", function(){
+                $(this).off("touchmove");
+            });
+        });
+      </script> 
+   </body>
+</html>

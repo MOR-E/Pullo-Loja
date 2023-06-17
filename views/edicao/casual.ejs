@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<%- include ('../partials/cabecalho.ejs'); %>
+   <!-- body -->
+   <body class="main-layout">
+	<!-- header section start -->
+	<div class="container bg-dark">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+            </div>
+            <div class="col-sm-9">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                       <a class="nav-item nav-link" href="../index.ejs">Inicio</a>
+                       <a class="nav-item nav-link" href="../collection.ejs">Coleção</a>
+                       <a class="nav-item nav-link" href="../shoes.ejs">Tenis</a>
+                       <a class="nav-item nav-link" href="../contact.ejs">Contato</a>
+                       <a class="nav-item nav-link last" href="#"><img src="images/search_icon.png"></a>
+                       <a class="nav-item nav-link last" href="../contact.html"><img src="images/shop_icon.png"></a>
+                       <a class="nav-item nav-link last" href="" style="color: white;"><img src="images/person.png" alt="" ></a>
+                    </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+	<!-- new collection section start -->
+  <div class="collection_text">Edição</div>
+    <div class="layout_padding collection_section">
+		<div class="layout_padding collection_section">
+			<div class="container">
+				<h1 class="new_text"><strong>Edição de produto</strong></h1>
+				<div class="collection_section_2" style="background-color: bisque;">
+
+                    <button class="btn">Finalizar</button>
+				</div>
+			</div>
+		</div>
+    </div>
+    <%- include ('../partials/rodape.ejs'); %>
+    </body>
+	<!-- new collection section end -->
+	<!-- section footer start -->
+
+	<!-- section footer end -->
+</html>
