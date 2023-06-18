@@ -16,7 +16,7 @@
                     </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                       <a class="nav-item nav-link" href="../index.ejs">Inicio</a>
+                       <a class="nav-item nav-link" href="/">Inicio</a>
                        <a class="nav-item nav-link" href="../collection.ejs">Coleção</a>
                        <a class="nav-item nav-link" href="../shoes.ejs">Tenis</a>
                        <a class="nav-item nav-link" href="../contact.ejs">Contato</a>
@@ -36,7 +36,26 @@
 			<div class="container">
 				<h1 class="new_text"><strong>Finalização</strong></h1>
 				<div class="collection_section_2" style="background-color: bisque;">
-
+                    <form action="/finaliza_salva" method="POST">
+                        <hr>
+                        <h1 class="consectetur_text">Endereço</h1>
+                        <input type="text" placeholder="Rua" name="rua">
+                        <input type="text" placeholder="Bairro" name="bairro">
+                        <input type="number" placeholder="Numero" name="numero">
+                        <input type="text"  placeholder="cmpl" name="complemento">
+                        <input type="number" placeholder="CEP" name="cep">
+                        <hr>
+                        <h1 class="consectetur_text">Forma de pagamento</h1>
+                        <input type="number" placeholder="Numero" name="numero_cartao">
+                        <input type="text" placeholder="Nome" name="nome">
+                        <input type="number" placeholder="CVV" name="cvv">
+                        <input type="number" placeholder="Data de expiração" name="data_expiracao">
+                        <hr>
+                        <input type="checkbox"><h1 class="consectetur_text">PIX</h1>
+                        <p class="consectetur_text">Sera enviado nesse email um QR code para conclusão do pagamento</p>
+                        <input type="text" placeholder="Email" name="email"><br>
+                        <button class="btn" style="background-color: crimson;">Finalizar</button>
+                    </form>
 				</div>
 			</div>
 		</div>

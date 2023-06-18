@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
+const connection = require("./database/database")
+const finaliza = require("./models/finaliza")
 
 
 app.set('view engine','ejs');
 app.use(express.static("public"));
 
 
-app.get("/index.ejs", (req, res) => {
+app.get("/", (req, res) => {
         res.render("index.ejs");
 }) 
 app.get("/contact.ejs", (req, res) => {
@@ -38,6 +40,46 @@ app.get("/casual", (req, res) => {
 app.get("/esportivo", (req, res) => {
     res.render("./edicao/esportivo.ejs");
 }) 
+
+app.post("/finaliza_salva", (req, res) => {
+    var rua = req.body.rua;
+    var bairro = req.body.bairro;
+    var numero = req.body.numero;
+    var complemento = req.body.complemento;
+    var CEP = req.body.cep;
+    var numero_cartao = req.body.numero_cartao;
+    var nome = req.body.nome;
+    var cvv = req.body.cvv;
+    var data_expiracao = req.body.data_expiracao;
+    var email = req.body.email;
+
+    
+        finaliza.create({
+            rua: rua,
+            bairro: bairro,
+            numero: numero,
+            complemento: complemento,
+            CEP: CEP,
+            numero_cartao: numero_cartao,
+            cvv:cvv,
+            nome: nome,
+            data_expiracao: data_expiracao,
+            email: email,
+        }).then(() => {
+            res.redirect("/");
+        }).catch((err) => {
+            res.redirect("/")
+        })
+
+        });
+
+connection 
+    .authenticate()
+    .then(() => {
+        console.log("Conexão feita com sucesso")
+    }).catch((error) => {
+        console.log("Error")
+    })
 
 app.listen(8000, () => {
         console.log("servidor rodando");
