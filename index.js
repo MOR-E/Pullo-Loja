@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const connection = require("./database/database")
-const finaliza = require("./models/finaliza")
+const finaliza = require("./models/Finaliza")
+
 
 
 app.set('view engine','ejs');
 app.use(express.static("public"));
-
+    
 
 app.get("/", (req, res) => {
         res.render("index.ejs");
@@ -41,7 +42,9 @@ app.get("/esportivo", (req, res) => {
     res.render("./edicao/esportivo.ejs");
 }) 
 
-app.post("/finaliza_salva", (req, res) => {
+
+
+app.post("/finaliza/salva", (req, res) => {
     var rua = req.body.rua;
     var bairro = req.body.bairro;
     var numero = req.body.numero;
@@ -67,11 +70,10 @@ app.post("/finaliza_salva", (req, res) => {
             email: email,
         }).then(() => {
             res.redirect("/");
-        }).catch((err) => {
-            res.redirect("/")
         })
 
         });
+
 
 connection 
     .authenticate()
@@ -84,3 +86,4 @@ connection
 app.listen(8000, () => {
         console.log("servidor rodando");
 })
+
