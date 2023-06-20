@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const connection = require("./database/database")
 const finaliza = require("./models/Finaliza")
+const bodyParser = require("body-parser");
 
-
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine','ejs');
 app.use(express.static("public"));
@@ -49,7 +50,7 @@ app.post("/finaliza/salva", (req, res) => {
     var bairro = req.body.bairro;
     var numero = req.body.numero;
     var complemento = req.body.complemento;
-    var CEP = req.body.cep;
+    var cep = req.body.cep;
     var numero_cartao = req.body.numero_cartao;
     var nome = req.body.nome;
     var cvv = req.body.cvv;
@@ -62,7 +63,7 @@ app.post("/finaliza/salva", (req, res) => {
             bairro: bairro,
             numero: numero,
             complemento: complemento,
-            CEP: CEP,
+            cep: cep,
             numero_cartao: numero_cartao,
             cvv:cvv,
             nome: nome,
