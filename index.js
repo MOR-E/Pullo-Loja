@@ -84,7 +84,7 @@ connection
         console.log("Error")
     })
 
-app.listen(8000, () => {
+app.listen(7600, () => {
         console.log("servidor rodando");
 })
 

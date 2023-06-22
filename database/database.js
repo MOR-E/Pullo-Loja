@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize('finaliza','root', 'abc@123', {
-    host: 'localhost',
+const connection = new Sequelize('railway','root', '3Rx23Trszd7KmSiJDG9q', {
+    host: 'containers-us-west-158.railway.app',
     dialect: 'mysql',
     timezone: "-03:00"
 });
